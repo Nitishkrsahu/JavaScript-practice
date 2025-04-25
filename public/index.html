@@ -28,7 +28,16 @@
                 document.getElementById("selectedData").innerHTML = fontStyleValue;
             }
             function formatText(){
-                
+                document.getElementById("textSample").style.fontSize = `${fontSizeValue + 5 }px`;
+                document.getElementById("textSample").style.color = colorValue;
+                if(fontStyleValue == "italic"){
+                    document.getElementById("textSample").style.fontStyle = fontStyleValue;
+                    document.getElementById("textSample").style.fontWeight = "";
+                }
+                else{
+                    document.getElementById("textSample").style.fontWeight = fontStyleValue;
+                    document.getElementById("textSample").style.fontStyle = "";
+                }
             }
             
         </script>
@@ -39,6 +48,7 @@
         <h2 class="text-center mt-4">Format Text</h2>
         <div class="row px-4 pt-4">
             <div class="col-md-4 border-secondary border border-1 p-4">
+                <h2 class="text-center p-4">Font Style</h2>
                 <div class="mb-4">
                     <label for="fontSizeInput" class="form-label">Select Font Size: </label>
                     <div>
@@ -65,7 +75,7 @@
                 <button class="btn btn-warning w-100" onclick="formatText()">Apply Changes</button>
             </div>
             <div class="col-md-8 border border-1 border-black text-center p-5">
-                <h2 id="textSample">Sample Text</h2>             
+                <p id="textSample" class="">Sample Text</->             
             </div>
         </div>
 
